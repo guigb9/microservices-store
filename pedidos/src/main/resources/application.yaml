@@ -1,0 +1,23 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+
+spring:
+  application:
+    name: pedidos-ms
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: @db.url@/alurafood-pagamento?createDatabaseIfNotExist=true
+    username: @db.username@
+    password: @db.password@
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: 0
